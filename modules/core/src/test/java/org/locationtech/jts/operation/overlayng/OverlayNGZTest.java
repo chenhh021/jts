@@ -27,7 +27,7 @@ public class OverlayNGZTest extends GeometryTestCase
   }
   
   public void testPointXYPointDifference() {
-    checkDifference("MULTIPOINT ((1 1), (5 5))", "POINT Z (5 5 99)",
+    checkDifference("MULTIPOINT ((1 1 NaN), (5 5 NaN))", "POINT Z (5 5 99)",
         "POINT Z(1 1 99)");
   }
 
@@ -74,7 +74,7 @@ public class OverlayNGZTest extends GeometryTestCase
   }
 
   public void testPointXYPolygonIntersection() {
-    checkIntersection("POINT (5 5)", "POLYGON Z ((1 9 50, 9 9 90, 9 1 50, 1 1 10, 1 9 50))",
+    checkIntersection("POINT (5 5 NaN)", "POLYGON Z ((1 9 50, 9 9 90, 9 1 50, 1 1 10, 1 9 50))",
         "POINT Z(5 5 50)");
   }
 

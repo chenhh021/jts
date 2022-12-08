@@ -15,6 +15,7 @@ package org.locationtech.jts.algorithm;
  *@version 1.7
  */
 import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.CoordinateXYZM;
 import org.locationtech.jts.geom.Envelope;
 
 /**
@@ -215,6 +216,14 @@ public class RobustLineIntersector
       pCopy.setZ( z );
     }
     return pCopy;
+//    Coordinate res;
+//    if (Double.isNaN(z))
+//      res = p.copy();
+//    else {
+//      res = new Coordinate(p);
+//      res.setZ(z);
+//    }
+//    return res;
   }
   
   private static Coordinate copy(Coordinate p) {
